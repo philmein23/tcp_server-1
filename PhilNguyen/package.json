@@ -1,0 +1,26 @@
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "description": "creating a tcp request to server",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com/philmein23"
+  },
+  "author": "Phil Nguyen",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5",
+    "superagent": "^1.8.3"
+  }
+}
