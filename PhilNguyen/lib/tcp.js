@@ -16,7 +16,6 @@ net.createServer((socket) => {
   process.stdout.write('server up on 3000\n');
 });
 
-let client = net.connect({port:3000}, () => {
+let client = net.connect({ port: 3000 }, () => {
   client.write('testing, testing');
-  process.stdout.write('testing');
 });
