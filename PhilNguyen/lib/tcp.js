@@ -6,14 +6,17 @@ let date = new Date();
 let timeNow = date.getTime();
 let writeFile;
 
-const server = module.exports = net.createServer((socket) => {
-  writeFile = fs.createWriteStream(__dirname + '/' + timeNow + '.txt');
+net.createServer((socket) => {
+  writeFile = fs.createWriteStream(__dirname + '/' + timeNow.toString());
   socket.pipe(writeFile);
   socket.on('data', () => {
-    socket.end();
+    socket.end('' + timeNow.toString());
   });
+}).listen(3000, () => {
+  process.stdout.write('server up on 3000\n');
 });
 
-server.listen(3000, () => {
-  process.stdout.write('server up on 3000\n');
+let client = net.connect({port:3000}, () => {
+  client.write('testing, testing');
+  process.stdout.write('testing');
 });
