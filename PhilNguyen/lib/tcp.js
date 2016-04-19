@@ -2,10 +2,9 @@
 const net = require('net');
 const fs = require('fs');
 
-let timeNow = new Date().getTime();
-let writeFile;
-
 net.createServer((socket) => {
+  let timeNow = new Date().getTime();
+  let writeFile;
   writeFile = fs.createWriteStream(__dirname + '/' + timeNow.toString());
   socket.pipe(writeFile);
   socket.on('data', () => {
